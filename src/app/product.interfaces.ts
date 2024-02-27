@@ -1,7 +1,8 @@
 export interface ProductInterface {
+    id?: string;
     name: string,
     description: string,
     stock: number,
     price: number,
-    photo: string | Blob | null
+    photo: string | File | null
 }

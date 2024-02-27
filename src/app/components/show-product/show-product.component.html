@@ -1,0 +1,15 @@
+
+<div *ngIf="product" style="margin-top: 150px;" class="row justify-content-center">
+    <div class="photo col-6">
+      <img [src]="imagePath">
+    </div>
+    <div class=" col-4 px-5">
+      <img height="25px" src="https://www.gomeriajoanico.com/wp-content/uploads/2022/12/XBRI-logo.png" alt="">
+      <h2 class="fw-bold mt-3"> {{product.name}}</h2>
+      <h4 class="fw-bold price">{{product.price | currency }}</h4>
+      <h5 class="mt-4">Produto em estoque: {{product.stock}} unidades</h5>
+      <span>
+        {{product.description}}
+      </span>
+    </div>
+</div>

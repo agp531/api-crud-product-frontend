@@ -1,0 +1,20 @@
+.photo {
+    height: 500px;
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: -5px 10px 4px -5px #00000026;
+  }
+  .photo img {
+    max-width: 500px;
+  }
+  
+  .price{
+    background-color: green;
+    width: max-content;
+    padding: 5px 20px;
+    color: #fff;
+    border-radius: 6px;
+    margin-top: 20px;
+  }

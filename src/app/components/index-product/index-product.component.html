@@ -1,0 +1,38 @@
+<div style="margin-top: 150px;" class="row justify-content-center">
+    <div style="width: 80%;" class="d-flex justify-content-end p-0">
+      <app-create/>
+    </div>
+    <div class="div-table">
+        <table class="table">
+            <thead style="background: #cecece">
+                <tr>
+                    <th scope="col" class="border-radius">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Stock</th>
+                    <th width="100px" scope="col" class="border-radius-2">Actions</th>
+                </tr>
+            </thead>
+                <tbody  *ngIf="products.length > 0; else noMoments">
+                    @for(product of products; track product) {
+                        <tr>
+                            <th scope="row">{{ product.id }}</th>
+                            <td><a routerLink="/product/{{product?.id}}">{{ product.name }} <i class="bi bi-box-arrow-up-right fw-bold"></i></a></td>
+                            <td>{{ product.description }}</td>
+                            <td>{{ product.price | currency }}</td>
+                            <td>{{ product.stock }}</td>
+                            <td class="d-flex justify-content-end">
+                                <app-edit-product [product]="product"/>
+                                <i (click)="deleteProduct(product)" class="bi bi-trash-fill px-3 text-danger"></i>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            <ng-template #noMoments>
+                <br>
+                <p class="d-flex justify-content-center"> #No Products created yet</p>
+            </ng-template>
+        </table>
+    </div>
+  </div>
